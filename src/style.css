@@ -37,7 +37,11 @@ strong{
     color: rgb(246, 82, 130);
 }
 .temperature-container{
-    margin-top: 20px;
+    margin-top: 45px;
+    letter-spacing: -4px;
+}
+.temperature-container img{
+    max-width: 60px;
 }
 .temperature{
     color: #212121;
