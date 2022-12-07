@@ -32,6 +32,7 @@ function displayTemperature(response){
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
 let apiKey = "3324937c27278e13f542f63f7e3df9b5";
 let unit = "metric";
 let city = "Kyiv";
@@ -57,3 +58,11 @@ axios.get(apiUrl).then(displayTemperature);
 //     };
 // minuteElement.innerHTML = minute;
 
+// Form search
+function search(event){
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    console.log(cityInputElement.value);
+}
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", search);
