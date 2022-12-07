@@ -46,8 +46,12 @@ strong{
     margin-top: 45px;
     letter-spacing: -4px;
 }
-.temperature-container img{
-    max-width: 60px;
+a {
+    text-decoration: none;
+    cursor: default;
+}
+.temperature-container .active {
+    color: black;
 }
 .temperature{
     color: #212121;
