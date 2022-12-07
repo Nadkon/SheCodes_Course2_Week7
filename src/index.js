@@ -16,18 +16,22 @@ function FormatDate(timestamp){
 
 // Show current temperature
 function displayTemperature(response){
+    console.log(response.data);
     let currentTemperature = document.querySelector("#current-temp");
     let cityElement = document.querySelector("#city");
     let description = document.querySelector("#description");
     let humidity = document.querySelector("#humidity");
     let wind = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
+    let iconElement = document.querySelector("#icon");
     currentTemperature.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML = response.data.name;
     description.innerHTML = response.data.weather[0].description;
     humidity.innerHTML = response.data.main.humidity;
     wind.innerHTML = Math.round(response.data.wind.speed);
     dateElement.innerHTML = FormatDate(response.data.dt * 1000);
+    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 let apiKey = "3324937c27278e13f542f63f7e3df9b5";
 let unit = "metric";
