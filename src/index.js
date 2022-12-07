@@ -17,3 +17,21 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=${api
 axios.get(apiUrl).then(displayTemperature);
 
 // Show current date and time
+let now = new Date();
+let days = ["Sunday", "Monday", "Tuesdya", "Wednesday", "Thursday", "Friday", "Saturday"];
+let weekDay = document.querySelector("#week-day");
+weekDay.innerHTML = days[now.getDay()];
+
+let hourElement = document.querySelector("#hour");
+let hour =  now.getHours();
+    if (hour < 10){
+        hour = `0${hour}`
+    };
+hourElement.innerHTML = hour;
+let minuteElement = document.querySelector("#minutes");
+let minute = now.getMinutes();
+    if (minute < 10){
+        minute = `0${minute}`
+    };
+minuteElement.innerHTML = minute;
+
