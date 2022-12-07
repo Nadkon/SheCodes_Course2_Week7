@@ -16,7 +16,6 @@ function FormatDate(timestamp){
 
 // Show current temperature
 function displayTemperature(response){
-    console.log(response.data);
     let currentTemperature = document.querySelector("#current-temp");
     let cityElement = document.querySelector("#city");
     let description = document.querySelector("#description");
