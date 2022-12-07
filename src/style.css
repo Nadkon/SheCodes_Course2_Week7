@@ -32,7 +32,11 @@ li{
     font-weight: 500;
     line-height: 20px;
     margin-bottom: 5px;
+    text-transform: capitalize;
 } 
+.lowercase{
+text-transform: lowercase;
+}
 strong{
     color: rgb(246, 82, 130);
 }
