@@ -1,4 +1,4 @@
-// Sohw current date and time 
+// Sohw current date and time
 function FormatDate(timestamp){
     let date = new Date (timestamp);
     let hours = date.getHours();
@@ -13,7 +13,26 @@ function FormatDate(timestamp){
     let day = days[date.getDay()];
     return `${day} ${hours}:${minutes}`
 }
+// forecast
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast")
 
+    let forecastHTML = `<div class="row">`;
+    let days = ["Thu", "Fri", "Sat", "Sun"];
+    days.forEach(function (day) {
+        forecastHTML = forecastHTML + `
+        <div class="col-2 forecast-info">
+        <div class="forecast-date">${day}</div>
+        <img src="./src/rain.png" alt="rain">
+        <div class="forecast-temperature">
+        <span class="forecast-temperature-max">12°</span>
+        <span class="forecast-temperature-min">10°</span>
+        </div>
+        </div>`;
+    })
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
 // Show current temperature
 function displayTemperature(response){
     let currentTemperature = document.querySelector("#current-temp");
@@ -90,3 +109,4 @@ let currentLocation = document.querySelector("#current-location-search");
 currentLocation.addEventListener("click", showCurrentLocation);
 
 search("Kyiv");
+displayForecast();
