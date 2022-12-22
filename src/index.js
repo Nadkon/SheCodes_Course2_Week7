@@ -45,7 +45,6 @@ function displayForecast(response) {
 }
 // show forecast
 function getForecast(coordinates) {
-    console.log(coordinates);
     // let apiKey = "3324937c27278e13f542f63f7e3df9b5";
     let apiKey = "6f578b96aa9505bcce148ac22cb85794";
     // API key to use!!! 6f578b96aa9505bcce148ac22cb85794
@@ -89,23 +88,7 @@ function searchCity(event){
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
-// conversion from C to F
-function displayFahrenheitTemperature(event){
-    event.preventDefault();
-    let fahrenheitTemperature = (celsiusTemperature * 9 / 5) + 32;
-    fahrenheitLink.classList.add("active");
-    celsiusLink.classList.remove("active");
-    let currentTemperature = document.querySelector("#current-temp");
-    currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
-}
 
-function displayCelsiusTemperature(event){
-    event.preventDefault();
-    let currentTemperature = document.querySelector("#current-temp");
-    celsiusLink.classList.add("active");
-    fahrenheitLink.classList.remove("active");
-    currentTemperature.innerHTML = Math.round(celsiusTemperature);
-}
 
 function searchPosition(position) {
     let lat = position.coords.latitude;
@@ -120,12 +103,6 @@ function showCurrentLocation(event){
     navigator.geolocation.getCurrentPosition(searchPosition);
 }
 let apiKey = "3324937c27278e13f542f63f7e3df9b5";
-let celsiusTemperature = null;
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let currentLocation = document.querySelector("#current-location-search");
 currentLocation.addEventListener("click", showCurrentLocation);
